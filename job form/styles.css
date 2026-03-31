@@ -1,0 +1,195 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+ 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: #2e2e2e;
+  --accent: #c8f135;
+  --accent-dark: #a3cc1a;
+  --text: #f0f0f0;
+  --text-muted: #888;
+  --red: #ff4d4d;
+  --green: #4dff91;
+  --radius: 8px;
+}
+ 
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+ 
+/* === CONTAINER === */
+.container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 560px;
+}
+ 
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+ 
+/* === FORM LAYOUT === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+ 
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+ 
+/* === INPUTS, SELECT, TEXTAREA === */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+ 
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+ 
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 241, 53, 0.15);
+}
+ 
+input:invalid, select:invalid, textarea:invalid {
+  border-color: red;
+}
+ 
+input:valid, select:valid, textarea:valid {
+  border-color: green;
+}
+ 
+input:first-of-type {
+  border-radius: 20px;
+}
+ 
+/* === RADIO GROUP === */
+fieldset.radio-group {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+}
+ 
+fieldset.radio-group legend {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0 0.4rem;
+}
+ 
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+ 
+.radio-option label {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+ 
+/* Hide default radio */
+.radio-group input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+ 
+/* :checked on radio */
+.radio-group input[type="radio"]:checked {
+  border-color: var(--accent);
+  background-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 241, 53, 0.25);
+}
+ 
+.radio-group input[type="radio"]:checked + label {
+  color: var(--accent);
+}
+ 
+/* === BUTTON === */
+button[type="submit"] {
+  background-color: var(--accent);
+  color: #0f0f0f;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+ 
+button:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
