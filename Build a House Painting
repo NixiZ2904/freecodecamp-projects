@@ -25,3 +25,65 @@
 
 </body>
 </html>
+
+
+<! -- CSS -->
+
+#house {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background-color: rgb(241, 226, 226);
+  border: 2px solid white;
+}
+
+#chimney {
+  position: absolute;
+  top: -100px;        
+  right: 60px;
+  z-index: -1;         
+  width: 50px;
+  height: 100px;
+  background-color: orange;
+  border: 2px solid black;
+}
+
+#roof {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 100px;
+  background-color: brown;
+  border: 2px solid red;
+}
+
+#window-1 {
+  position: absolute;
+  top: 150px;          /* below the roof */
+  left: 50px;
+  width: 100px;
+  height: 80px;
+  background-color: cyan;
+  border: 2px solid black;
+}
+
+#window-2 {
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  width: 100px;
+  height: 80px;
+  background-color: cyan;
+  border: 2px solid purple;
+}
+
+#door {
+  position: absolute;
+  bottom: 0;
+  left: 200px;         /* centered: (500 - 100) / 2 */
+  width: 100px;
+  height: 150px;
+  background-color: pink;
+  border: 2px solid brown;
+}
